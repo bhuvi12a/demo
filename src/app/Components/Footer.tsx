@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Heart, Send, MapPin, Phone, Mail } from 'lucide-react';
+import { Heart, Send, MapPin, Phone, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 // 3D Footer Component with Sandalwood Colors
 const Footer: React.FC = () => {
@@ -9,7 +10,7 @@ const Footer: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     
@@ -24,9 +25,11 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center mb-4">
-                <img 
+                <Image
                   src="https://i.imgur.com/9X8Z3Qm.png" 
                   alt="Traditional Siddha Ayurveda Clinic" 
+                  width={160}
+                  height={48}
                   className="h-12 w-auto mr-3 brightness-0 invert transform-gpu hover:scale-110 transition-transform"
                 />
                 <span className="text-xl font-bold">Traditional Siddha Ayurveda Clinic</span>
